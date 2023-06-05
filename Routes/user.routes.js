@@ -98,7 +98,7 @@ userRouter.patch("/update/:_id", auth, async (req, res) => {
 
 // --------------->>>>>>>> User Delete <<<<<<<<-------------------
 
-userRouter.delete("/delete",auth,async(req, res) => {
+userRouter.delete("/delete/:_id",auth,async(req, res) => {
     const {_id} = req.params
     try {
         const user = await UserModel.findByIdAndDelete(_id)
